@@ -139,7 +139,7 @@ export default function Index() {
             onClick={() => scrollTo("#home")}
             className="font-display text-2xl font-semibold text-wood tracking-wide"
           >
-            🌲 БаняПро
+            🌲 BaniDzen
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -530,8 +530,9 @@ export default function Index() {
 
             <div className="flex flex-col gap-8">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 (800) 000-00-00" },
-                { icon: "Mail", label: "Email", value: "info@banyapro.ru" },
+                { icon: "Phone", label: "Телефон", value: "+7 905-710-8890" },
+                { icon: "Phone", label: "Manager", value: "+7 977-634-1129" },
+                { icon: "Mail", label: "Email", value: "pruddzen@gmail.com" },
                 { icon: "MapPin", label: "Адрес", value: "Москва, работаем по всей России" },
                 { icon: "Clock", label: "Время работы", value: "Пн–Сб, 9:00–19:00" },
               ].map((item) => (
@@ -553,7 +554,7 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="bg-bark border-t border-white/10 py-8 px-6 text-center">
         <p className="font-body text-xs text-cream/40">
-          © 2024 БаняПро — строительство бань под ключ
+          © 2024 BaniDzen — строительство бань под ключ
         </p>
       </footer>
     </div>
