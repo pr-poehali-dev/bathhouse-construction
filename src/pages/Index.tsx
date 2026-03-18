@@ -38,12 +38,12 @@ const SERVICES = [
 ];
 
 const GALLERY_ITEMS = [
-  { title: "Баня из бревна 6×4 м", tag: "Бревно", bg: "from-amber-900/30 to-amber-700/20" },
-  { title: "Баня-куб из бруса", tag: "Брус", bg: "from-stone-700/30 to-stone-500/20" },
-  { title: "Баня с террасой", tag: "Под ключ", bg: "from-green-900/30 to-green-700/20" },
-  { title: "Финская сауна", tag: "Каркас", bg: "from-amber-800/25 to-yellow-700/15" },
-  { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20" },
-  { title: "Мобильная баня", tag: "Каркас", bg: "from-green-800/25 to-amber-700/15" },
+  { title: "Баня из бревна 6×4 м", tag: "Бревно", bg: "from-amber-900/30 to-amber-700/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/9abf2b80-2e81-4946-9b98-724d1c39835d.png" },
+  { title: "Баня-куб из бруса", tag: "Брус", bg: "from-stone-700/30 to-stone-500/20", img: null },
+  { title: "Баня с террасой", tag: "Под ключ", bg: "from-green-900/30 to-green-700/20", img: null },
+  { title: "Финская сауна", tag: "Каркас", bg: "from-amber-800/25 to-yellow-700/15", img: null },
+  { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20", img: null },
+  { title: "Мобильная баня", tag: "Каркас", bg: "from-green-800/25 to-amber-700/15", img: null },
 ];
 
 const PROJECTS = [
@@ -385,11 +385,16 @@ export default function Index() {
                 key={item.title}
                 className={`card-hover relative rounded-2xl overflow-hidden h-56 bg-gradient-to-br ${item.bg} border border-sand cursor-pointer group`}
               >
+                {item.img && (
+                  <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+                )}
                 <div className="absolute inset-0 texture-wood opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-bark/60 to-transparent" />
-                <div className="absolute top-6 right-6 opacity-20">
-                  <Icon name="TreePine" size={48} className="text-cream" />
-                </div>
+                {!item.img && (
+                  <div className="absolute top-6 right-6 opacity-20">
+                    <Icon name="TreePine" size={48} className="text-cream" />
+                  </div>
+                )}
                 <div className="absolute bottom-0 left-0 p-5">
                   <span className="inline-block bg-cream/90 text-wood text-xs font-body font-medium px-3 py-1 rounded-full mb-2">
                     {item.tag}
