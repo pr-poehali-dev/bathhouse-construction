@@ -39,7 +39,7 @@ const SERVICES = [
 
 const GALLERY_ITEMS = [
   { title: "Баня из бревна 6×4 м", tag: "Бревно", bg: "from-amber-900/30 to-amber-700/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/9abf2b80-2e81-4946-9b98-724d1c39835d.png" },
-  { title: "Баня-куб из бруса", tag: "Брус", bg: "from-stone-700/30 to-stone-500/20", img: null },
+  { title: "Баня-куб из бруса", tag: "Брус", bg: "from-stone-700/30 to-stone-500/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/a7c5d808-a72b-4fcb-b0b4-600952887ae2.png" },
   { title: "Баня с террасой", tag: "Под ключ", bg: "from-green-900/30 to-green-700/20", img: null },
   { title: "Финская сауна", tag: "Каркас", bg: "from-amber-800/25 to-yellow-700/15", img: null },
   { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20", img: null },
