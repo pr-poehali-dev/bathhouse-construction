@@ -396,11 +396,14 @@ export default function Index() {
                   </span>
                   <h3 className="font-display text-xl text-cream font-semibold">{item.title}</h3>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-bark/20">
+                <button
+                  onClick={() => scrollTo("#contacts")}
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-bark/20"
+                >
                   <div className="bg-cream/90 text-wood text-sm font-body font-medium px-4 py-2 rounded-full">
                     Подробнее
                   </div>
-                </div>
+                </button>
               </div>
             ))}
           </div>
