@@ -14,25 +14,25 @@ const SERVICES = [
     icon: "TreePine",
     title: "Бани из бревна",
     desc: "Ручная рубка из отборной сосны и ели. Срок службы — более 80 лет. Сохраняют природный аромат и тепло.",
-    price: "от 350 000 ₽",
+    price: "от 480 000 ₽",
   },
   {
     icon: "Layers",
     title: "Бани из бруса",
     desc: "Профилированный и клеёный брус. Быстрый монтаж, минимальная усадка, идеальная геометрия.",
-    price: "от 250 000 ₽",
+    price: "от 320 000 ₽",
   },
   {
     icon: "Home",
     title: "Каркасные бани",
     desc: "Современные SIP-панели и каркас. Отличная теплоизоляция, строительство за 2–3 недели.",
-    price: "от 180 000 ₽",
+    price: "от 220 000 ₽",
   },
   {
     icon: "Hammer",
     title: "Бани под ключ",
     desc: "Полный цикл: фундамент, сруб, кровля, отделка, печь, электрика, сантехника.",
-    price: "от 550 000 ₽",
+    price: "от 780 000 ₽",
   },
 ];
 
@@ -46,18 +46,18 @@ const GALLERY_ITEMS = [
 ];
 
 const MATERIALS = [
-  { id: "log", label: "Оцилиндрованное бревно", pricePerSqm: 18000 },
-  { id: "beam", label: "Профилированный брус", pricePerSqm: 13500 },
-  { id: "glued", label: "Клеёный брус", pricePerSqm: 22000 },
-  { id: "frame", label: "Каркасная конструкция", pricePerSqm: 10500 },
+  { id: "log", label: "Оцилиндрованное бревно", pricePerSqm: 26000 },
+  { id: "beam", label: "Профилированный брус", pricePerSqm: 18500 },
+  { id: "glued", label: "Клеёный брус", pricePerSqm: 34000 },
+  { id: "frame", label: "Каркасная конструкция", pricePerSqm: 14500 },
 ];
 
 const EXTRAS = [
-  { id: "terrace", label: "Терраса / веранда", price: 85000 },
-  { id: "stove", label: "Установка печи", price: 45000 },
-  { id: "plumbing", label: "Сантехника", price: 65000 },
-  { id: "electric", label: "Электрика", price: 40000 },
-  { id: "interior", label: "Внутренняя отделка", price: 70000 },
+  { id: "terrace", label: "Терраса / веранда", price: 120000 },
+  { id: "stove", label: "Установка печи", price: 65000 },
+  { id: "plumbing", label: "Сантехника", price: 90000 },
+  { id: "electric", label: "Электрика", price: 55000 },
+  { id: "interior", label: "Внутренняя отделка", price: 95000 },
 ];
 
 export default function Index() {
