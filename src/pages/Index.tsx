@@ -4,6 +4,7 @@ import Icon from "@/components/ui/icon";
 const NAV_LINKS = [
   { label: "Главная", href: "#home" },
   { label: "Услуги", href: "#services" },
+  { label: "Проекты", href: "#projects" },
   { label: "Галерея", href: "#gallery" },
   { label: "Калькулятор", href: "#calculator" },
   { label: "Контакты", href: "#contacts" },
@@ -43,6 +44,49 @@ const GALLERY_ITEMS = [
   { title: "Финская сауна", tag: "Каркас", bg: "from-amber-800/25 to-yellow-700/15" },
   { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20" },
   { title: "Мобильная баня", tag: "Каркас", bg: "from-green-800/25 to-amber-700/15" },
+];
+
+const PROJECTS = [
+  {
+    title: "Баня «Классика»",
+    size: "4×6 м · 24 м²",
+    material: "Оцилиндрованное бревно",
+    features: ["Парная + мойка + предбанник", "Кровля из металлочерепицы", "Готова к отделке"],
+    price: 624000,
+    badge: "Популярный",
+    badgeColor: "bg-moss text-cream",
+    icon: "TreePine",
+  },
+  {
+    title: "Баня «Уют»",
+    size: "4×5 м · 20 м²",
+    material: "Профилированный брус",
+    features: ["Парная + раздевалка", "Теплоизоляция пола", "Готова к отделке"],
+    price: 370000,
+    badge: "Бюджетный",
+    badgeColor: "bg-leaf text-bark",
+    icon: "Layers",
+  },
+  {
+    title: "Баня «Комфорт»",
+    size: "5×7 м · 35 м²",
+    material: "Клеёный брус",
+    features: ["Парная + мойка + комната отдыха", "Терраса 12 м²", "Премиум отделка"],
+    price: 1430000,
+    badge: "Премиум",
+    badgeColor: "bg-wood text-cream",
+    icon: "Hammer",
+  },
+  {
+    title: "Баня «Экспресс»",
+    size: "3×5 м · 15 м²",
+    material: "Каркасная конструкция",
+    features: ["Парная + раздевалка", "Монтаж за 2 недели", "Готова к использованию"],
+    price: 217500,
+    badge: "Быстро",
+    badgeColor: "bg-stone text-cream",
+    icon: "Home",
+  },
 ];
 
 const MATERIALS = [
@@ -226,6 +270,75 @@ export default function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="py-24 px-6 bg-sand/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-body text-xs uppercase tracking-widest text-moss mb-3">Готовые решения</p>
+            <h2 className="font-display text-5xl md:text-6xl font-light text-bark">Проекты с ценами</h2>
+            <p className="font-body text-foreground/60 mt-4 text-base">
+              Реальные проекты с фиксированной стоимостью — без скрытых доплат
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROJECTS.map((p) => (
+              <div key={p.title} className="card-hover bg-card rounded-2xl border border-sand overflow-hidden flex flex-col">
+                {/* Top accent */}
+                <div className="h-1.5 bg-gradient-to-r from-wood to-moss" />
+
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Badge + icon */}
+                  <div className="flex items-start justify-between mb-5">
+                    <div className="w-11 h-11 bg-sand rounded-xl flex items-center justify-center">
+                      <Icon name={p.icon} size={20} className="text-wood" fallback="Home" />
+                    </div>
+                    <span className={`text-xs font-body font-semibold px-3 py-1 rounded-full ${p.badgeColor}`}>
+                      {p.badge}
+                    </span>
+                  </div>
+
+                  {/* Title & size */}
+                  <h3 className="font-display text-2xl font-semibold text-bark mb-1">{p.title}</h3>
+                  <p className="font-body text-xs text-stone mb-1">{p.size}</p>
+                  <p className="font-body text-xs text-moss font-medium mb-4">{p.material}</p>
+
+                  {/* Features */}
+                  <ul className="flex flex-col gap-2 mb-6 flex-1">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 font-body text-xs text-foreground/70">
+                        <Icon name="Check" size={12} className="text-moss flex-shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Price */}
+                  <div className="border-t border-sand pt-4 flex items-end justify-between">
+                    <div>
+                      <div className="font-body text-xs text-stone mb-0.5">Стоимость</div>
+                      <div className="font-display text-3xl font-semibold text-wood">
+                        {(p.price / 1000).toFixed(0)}<span className="text-xl"> тыс ₽</span>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => scrollTo("#contacts")}
+                      className="text-xs font-body font-medium text-wood border border-wood rounded-full px-4 py-2 hover:bg-wood hover:text-cream transition-all"
+                    >
+                      Заказать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center font-body text-xs text-stone mt-8">
+            * Цены актуальны на 2025 год. Точная стоимость рассчитывается после осмотра участка.
+          </p>
         </div>
       </section>
 
