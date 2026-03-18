@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1773834047966163233.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['Cormorant', 'Georgia', 'serif'],
+				body: ['Golos Text', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +57,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				wood: 'hsl(var(--wood))',
+				bark: 'hsl(var(--bark))',
+				moss: 'hsl(var(--moss))',
+				leaf: 'hsl(var(--leaf))',
+				stone: 'hsl(var(--stone))',
+				cream: 'hsl(var(--cream))',
+				sand: 'hsl(var(--sand))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
