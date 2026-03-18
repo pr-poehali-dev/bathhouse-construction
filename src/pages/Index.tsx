@@ -582,11 +582,11 @@ export default function Index() {
 
             <div className="flex flex-col gap-8">
               {[
-                { icon: "Phone", label: "Телефон", value: "+7 905-710-8890" },
-                { icon: "Phone", label: "Manager", value: "+7 977-634-1129" },
-                { icon: "Mail", label: "Email", value: "pruddzen@gmail.com" },
-                { icon: "MapPin", label: "Адрес", value: "Москва, работаем по всей России" },
-                { icon: "Clock", label: "Время работы", value: "Пн–Сб, 9:00–19:00" },
+                { icon: "Phone", label: "Телефон", value: "+7 905-710-8890", href: "tel:+79057108890" },
+                { icon: "Phone", label: "Manager", value: "+7 977-634-1129", href: "tel:+79776341129" },
+                { icon: "Mail", label: "Email", value: "ruslan399885@gmail.com", href: "mailto:ruslan399885@gmail.com" },
+                { icon: "MapPin", label: "Адрес", value: "Москва, работаем по всей России", href: null },
+                { icon: "Clock", label: "Время работы", value: "Пн–Сб, 9:00–19:00", href: null },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -594,7 +594,13 @@ export default function Index() {
                   </div>
                   <div>
                     <div className="font-body text-xs text-cream/50 uppercase tracking-wider mb-0.5">{item.label}</div>
-                    <div className="font-body text-cream font-medium">{item.value}</div>
+                    {item.href ? (
+                      <a href={item.href} className="font-body text-cream font-medium hover:text-leaf transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="font-body text-cream font-medium">{item.value}</div>
+                    )}
                   </div>
                 </div>
               ))}
