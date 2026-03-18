@@ -33,7 +33,7 @@ def handler(event: dict, context) -> dict:
         }
 
     smtp_password = os.environ.get('SMTP_PASSWORD', '')
-    from_email = 'pruddzen@gmail.com'
+    from_email = 'ruslan399885@gmail.com'
     to_email = 'ruslan399885@gmail.com'
 
     msg = MIMEMultipart('alternative')
