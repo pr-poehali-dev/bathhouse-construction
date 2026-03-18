@@ -42,7 +42,7 @@ const GALLERY_ITEMS = [
   { title: "Баня-куб из бруса", tag: "Брус", bg: "from-stone-700/30 to-stone-500/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/a7c5d808-a72b-4fcb-b0b4-600952887ae2.png" },
   { title: "Баня с террасой", tag: "Под ключ", bg: "from-green-900/30 to-green-700/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/934912bd-c641-4286-b5fc-a4c8e355c44f.png" },
   { title: "Финская сауна", tag: "Каркас", bg: "from-amber-800/25 to-yellow-700/15", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/2621029c-f54e-4a7f-80e3-6a3e256917e1.png" },
-  { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20", img: null },
+  { title: "Банный комплекс", tag: "Под ключ", bg: "from-stone-800/30 to-stone-600/20", img: "https://cdn.poehali.dev/projects/1a25def1-7345-42e9-9539-c33c8d99b13f/bucket/162b3ccc-1597-4800-9426-e3c7cda430fa.jpeg" },
   { title: "Мобильная баня", tag: "Каркас", bg: "from-green-800/25 to-amber-700/15", img: null },
 ];
 
