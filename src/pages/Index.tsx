@@ -104,11 +104,18 @@ const EXTRAS = [
   { id: "interior", label: "Внутренняя отделка", price: 95000 },
 ];
 
+const SEND_CONTACT_URL = "https://functions.poehali.dev/de33ce24-2871-48f3-b2d0-c98a90fb607b";
+
 export default function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [area, setArea] = useState(24);
   const [material, setMaterial] = useState("log");
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
+
+  const [formName, setFormName] = useState("");
+  const [formPhone, setFormPhone] = useState("");
+  const [formMessage, setFormMessage] = useState("");
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const toggleExtra = (id: string) => {
     setSelectedExtras((prev) =>
@@ -128,6 +135,28 @@ export default function Index() {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("loading");
+    try {
+      const res = await fetch(SEND_CONTACT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: formName, phone: formPhone, message: formMessage }),
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        setFormName("");
+        setFormPhone("");
+        setFormMessage("");
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -507,26 +536,49 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <input
                 type="text"
                 placeholder="Ваше имя"
+                value={formName}
+                onChange={(e) => setFormName(e.target.value)}
+                required
                 className="bg-white/10 border border-white/20 text-cream placeholder-cream/40 rounded-xl px-5 py-3.5 font-body text-sm focus:outline-none focus:border-leaf transition-colors"
               />
               <input
                 type="tel"
                 placeholder="Телефон"
+                value={formPhone}
+                onChange={(e) => setFormPhone(e.target.value)}
+                required
                 className="bg-white/10 border border-white/20 text-cream placeholder-cream/40 rounded-xl px-5 py-3.5 font-body text-sm focus:outline-none focus:border-leaf transition-colors"
               />
               <textarea
                 rows={4}
                 placeholder="Расскажите о вашем проекте..."
+                value={formMessage}
+                onChange={(e) => setFormMessage(e.target.value)}
                 className="bg-white/10 border border-white/20 text-cream placeholder-cream/40 rounded-xl px-5 py-3.5 font-body text-sm focus:outline-none focus:border-leaf transition-colors resize-none"
               />
-              <button className="bg-leaf text-bark px-8 py-4 rounded-full font-body font-semibold hover:opacity-90 transition-opacity mt-2 text-sm">
-                Отправить заявку
-              </button>
-            </div>
+              {formStatus === "success" ? (
+                <div className="bg-leaf/20 border border-leaf/40 text-leaf rounded-xl px-5 py-4 font-body text-sm text-center">
+                  ✓ Заявка отправлена! Свяжемся с вами в течение 30 минут.
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={formStatus === "loading"}
+                  className="bg-leaf text-bark px-8 py-4 rounded-full font-body font-semibold hover:opacity-90 transition-opacity mt-2 text-sm disabled:opacity-60"
+                >
+                  {formStatus === "loading" ? "Отправляем..." : "Отправить заявку"}
+                </button>
+              )}
+              {formStatus === "error" && (
+                <p className="font-body text-xs text-red-300 text-center">
+                  Ошибка отправки. Позвоните нам напрямую.
+                </p>
+              )}
+            </form>
 
             <div className="flex flex-col gap-8">
               {[
